@@ -30,21 +30,21 @@
         {
             listBox1 = new ListBox();
             groupBox1 = new GroupBox();
-            button4 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            ChangeButton = new Button();
+            AddButton = new Button();
+            NameBox = new TextBox();
+            SurnameBox = new TextBox();
+            EmailBox = new TextBox();
+            PhoneBox = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             label5 = new Label();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBox5 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            FileBox = new TextBox();
+            LoadButton = new Button();
+            SaveButton = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,12 +59,12 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(button4);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(ChangeButton);
+            groupBox1.Controls.Add(AddButton);
+            groupBox1.Controls.Add(NameBox);
+            groupBox1.Controls.Add(SurnameBox);
+            groupBox1.Controls.Add(EmailBox);
+            groupBox1.Controls.Add(PhoneBox);
             groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label1);
@@ -78,46 +78,57 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Anket";
             // 
-            // button4
+            // ChangeButton
             // 
-            button4.Location = new Point(249, 297);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 30);
-            button4.TabIndex = 6;
-            button4.Text = "Əlavə et";
-            button4.UseVisualStyleBackColor = true;
+            ChangeButton.Location = new Point(249, 251);
+            ChangeButton.Name = "ChangeButton";
+            ChangeButton.Size = new Size(75, 40);
+            ChangeButton.TabIndex = 5;
+            ChangeButton.Text = "Dəyiş";
+            ChangeButton.UseVisualStyleBackColor = true;
+            ChangeButton.Click += ChangeButton_Click;
             // 
-            // textBox1
+            // AddButton
             // 
-            textBox1.Location = new Point(79, 19);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Name";
-            textBox1.Size = new Size(200, 23);
-            textBox1.TabIndex = 2;
+            AddButton.Location = new Point(249, 297);
+            AddButton.Name = "AddButton";
+            AddButton.Size = new Size(94, 30);
+            AddButton.TabIndex = 6;
+            AddButton.Text = "Əlavə et";
+            AddButton.UseVisualStyleBackColor = true;
+            AddButton.Click += AddButton_Click;
             // 
-            // textBox2
+            // NameBox
             // 
-            textBox2.Location = new Point(79, 67);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Surname";
-            textBox2.Size = new Size(200, 23);
-            textBox2.TabIndex = 3;
+            NameBox.Location = new Point(79, 19);
+            NameBox.Name = "NameBox";
+            NameBox.PlaceholderText = "Name";
+            NameBox.Size = new Size(200, 23);
+            NameBox.TabIndex = 2;
             // 
-            // textBox3
+            // SurnameBox
             // 
-            textBox3.Location = new Point(79, 110);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Email";
-            textBox3.Size = new Size(200, 23);
-            textBox3.TabIndex = 4;
+            SurnameBox.Location = new Point(79, 67);
+            SurnameBox.Name = "SurnameBox";
+            SurnameBox.PlaceholderText = "Surname";
+            SurnameBox.Size = new Size(200, 23);
+            SurnameBox.TabIndex = 3;
             // 
-            // textBox4
+            // EmailBox
             // 
-            textBox4.Location = new Point(79, 153);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "Telefon";
-            textBox4.Size = new Size(200, 23);
-            textBox4.TabIndex = 5;
+            EmailBox.Location = new Point(79, 110);
+            EmailBox.Name = "EmailBox";
+            EmailBox.PlaceholderText = "Email";
+            EmailBox.Size = new Size(200, 23);
+            EmailBox.TabIndex = 4;
+            // 
+            // PhoneBox
+            // 
+            PhoneBox.Location = new Point(79, 153);
+            PhoneBox.Name = "PhoneBox";
+            PhoneBox.PlaceholderText = "Telefon";
+            PhoneBox.Size = new Size(200, 23);
+            PhoneBox.TabIndex = 5;
             // 
             // dateTimePicker1
             // 
@@ -176,49 +187,42 @@
             label4.TabIndex = 5;
             label4.Text = "Tel";
             // 
-            // textBox5
+            // FileBox
             // 
-            textBox5.Location = new Point(367, 311);
-            textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = "FileName";
-            textBox5.Size = new Size(172, 23);
-            textBox5.TabIndex = 2;
+            FileBox.Location = new Point(367, 311);
+            FileBox.Name = "FileBox";
+            FileBox.PlaceholderText = "FileName";
+            FileBox.Size = new Size(172, 23);
+            FileBox.TabIndex = 2;
             // 
-            // button1
+            // LoadButton
             // 
-            button1.Location = new Point(367, 340);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 27);
-            button1.TabIndex = 3;
-            button1.Text = "Load";
-            button1.UseVisualStyleBackColor = true;
+            LoadButton.Location = new Point(367, 340);
+            LoadButton.Name = "LoadButton";
+            LoadButton.Size = new Size(75, 27);
+            LoadButton.TabIndex = 3;
+            LoadButton.Text = "Load";
+            LoadButton.UseVisualStyleBackColor = true;
+            LoadButton.Click += LoadButton_Click;
             // 
-            // button2
+            // SaveButton
             // 
-            button2.Location = new Point(448, 340);
-            button2.Name = "button2";
-            button2.Size = new Size(91, 27);
-            button2.TabIndex = 4;
-            button2.Text = "Save";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(249, 251);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 40);
-            button3.TabIndex = 5;
-            button3.Text = "Dəyiş";
-            button3.UseVisualStyleBackColor = true;
+            SaveButton.Location = new Point(448, 340);
+            SaveButton.Name = "SaveButton";
+            SaveButton.Size = new Size(91, 27);
+            SaveButton.TabIndex = 4;
+            SaveButton.Text = "Save";
+            SaveButton.UseVisualStyleBackColor = true;
+            SaveButton.Click += SaveButton_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(551, 387);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(textBox5);
+            Controls.Add(SaveButton);
+            Controls.Add(LoadButton);
+            Controls.Add(FileBox);
             Controls.Add(groupBox1);
             Controls.Add(listBox1);
             Name = "Form1";
@@ -238,15 +242,15 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox NameBox;
+        private TextBox SurnameBox;
+        private TextBox EmailBox;
+        private TextBox PhoneBox;
         private DateTimePicker dateTimePicker1;
-        private Button button4;
-        private TextBox textBox5;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button AddButton;
+        private TextBox FileBox;
+        private Button LoadButton;
+        private Button SaveButton;
+        private Button ChangeButton;
     }
 }
